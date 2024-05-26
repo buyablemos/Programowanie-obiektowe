@@ -1,0 +1,177 @@
+dwa wymiary
+
+wektor=punkt(tożsame)
+
+A-dlugosc wektora
+
+x=Acosalfa
+y=Asinalfa
+
+(x) (cosalfa -sinalfa)  (A)
+   =                     
+(y) (sin alfa cosalfa)  (0)
+
+
+ta macierz z cosinusami to macierz rotacji w okol osi z o kat alfa
+
+a'              (a)
+b' =Rot(z,alfa)*(b)
+
+(a) (x)  (c)
+   =    +       (przesuniecia w dwoch wymiarach)
+(b) (y)  (d)
+
+przesuniecia sie sumuja zawsze
+
+ale rotacje biezbyt
+
+a'' 
+   to rot(beta)*rot(alfa)*(a)
+                          (b)
+b'' 
+
+
+
+dla 3 wymiarach
+
+Rot(z,alfa)=(cosalfa -sinalfa 0)
+             sinalfa cosalfa 0
+               0       0     1
+
+
+Rot(x,alfa)= 1 0 0 
+             0 cos -sin
+             0 sin cos
+
+Rot(y,alfa)= c 0 sinalfa
+             0 1 0
+            -sin 0 c
+
+
+bryly opisywane w lokalnym ukladzie wspolrzednych, obliczenia dopiero przy rysowaniu
+
+uklad wspolrzednych (UW)
+
+1. rodzic(UW)
+2. przesuniecie(wektor)
+3. orientacja(macierz)
+
+jesli chcemy obrocic np lazik to musimy zmienic orientacje tylko lazika
+
+zmiana polozenia
+
+p=p+M(alfa)(d
+            0)
+
+zmiana orientacji
+
+M(alfa)=M(alfa)*M(beta)
+
+
+macierz->macierz 3d ->rotacji                      -wyznacznik =1 lub -1  -ortonormalna kazdy wiersz i kazda kolumna ma dlugosc 1 
+wektor->3d
+class UWspolrzednych{
+
+ UkladWspolrzednych *rodzic; (null)->ten pierwszy 
+
+ MacierzRotacji orientacja;
+ Wektor3D przesuniecie;
+
+public:
+
+rotacja(MacierzRotacji druga){
+    orientacja=druga*orientacja} musi byc taka kolejnosc
+}
+
+translacja(Wektor3d W){
+
+    przesuniecie=przesuniecie+W;
+}
+
+konstruktory, getery, setery i bajery
+
+przeliczdorodzica(Wektor3D p){
+
+
+}
+
+
+
+}
+
+1.Lazik:protected UW // narazie moze byc public 
+2.Lazik{
+    UW u1;
+}
+
+1.wysokosc,szerokosc, dlugosc
+prostopadloscian ma miec konstruktor
+
+metody do lazika:
+jedz(double d)
+obroc(double kat)
+konstrukotr prostopadloscian
+getery
+rysuj(czym? API3D*rys)
+
+lazik to prostopadloscian prostopadloscian(klasa)
+
+nie ma roznict czy uzywamy api op czy ogl
+
+std::shared_ptr<Typ> WS;
+Typ* WP;
+
+typ* wp = new Wp(2);
+
+delete wp;
+
+std::shared_ptr<Typ> Ws(2,0);
+
+typ a=*wp;
+typ a=*ws;
+
+za tydzien poruszajacy sie prostopadloscian!!!!
+
+
+
+Uw w nim macierz rotacji z macierzy3d pozniej prostopadloscian pozniej lazik
+
+w laziku musza byc informacje;
+
+Api 3d jest argumentem metody prostopadloscianu
+
+scena zawiera 3 laziki..
+
+1. Niech lazik dziedziczy publicznie z prostopadloscianu
+2. W przyszlosci prostopadloscian moze byc czescia lazika
+lazik powinien jechac do przodu ile i predkosc jedz(s,v)  obrot(kat) ->publicznie
+
+
+Scena{
+
+zmien_lazik();
+pokaz_laziki(); {moze wyswietlac informacje o laziku ze jest tu i tu itp..}
+
+
+}
+
+
+Macierz Rotacji dziedziczy publicznie po macierzy3d..
+
+lazik
+
+animu jobrot
+animuj ruch
+
+trzeba zainicjowac predkosc liniowa i obrotowa
+ animujac-klatka po klatce
+ 
+ std::this_thread::sleep_for(200ms)
+ <chrono>
+ <thread>
+ 
+ using namespace std::chrono_literals;
+
+POINT3D translate(Wektor3D)
+
+

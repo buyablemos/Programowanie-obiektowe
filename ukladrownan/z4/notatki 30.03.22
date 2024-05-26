@@ -1,0 +1,209 @@
+Ax=B
+
+1. Rozwiazywanie przez macierz odwrotna
+x=A^-1 B
+
+2. Wzory Cramera
+
+3. Metoda Gaussa
+
+class Wektor {
+public:
++,-,iloczyn skalarny, iloczyn wektorowy (tylko dla 3d)?!,mnozenie przez skalar, |dlugosc wektora|,
+Wektor():tab{0,0,0} {}
+Wektor(double x, double y, double z){tab[0]=a;tab[1]=b;tab[2]=c;};
+konstruktor kopiujacy:
+Wektor (Wektor &W) = default;
+
+
+
+
+
+wywolanie 
+Wektor W1=W2;
+
+seter/geter | latwa -> void setA(double a ){tab[0]=a}  void getA(double a)const{a=tab[0]}
+lepszy sposob:
+
+double & operator[](int ind){
+std:err 0<=ind<=2;
+return tab[ind];
+}
+
+const double & operator[](int ind)const{
+return tab[ind];
+
+} 
+
+W[2]=3.0;
+
+private/protected:
+
+std::array<double,3>tab;
+lub
+std::vector<double>tab; - dziwne
+
+double tab[3];
+
+
+}
+
+
+<<,>> (poza klasa)!
+
+
+1.double tab[3][3]
+2.std::array<Wektor,3>tab;
+3.Wektor tab[3];
+
+wektory lepiej pionowo! (czyytanie, cramer)
+poziomo dla gaussa i wyswietlania i mnozenia macierzy
+
+
+class Macierz{
+public:
+mnozenie-> dla skalar dla macierz dla wektor
+*,- macierzy
+transponowanie
+wyliczyc wyznacznik
+
+Macierz(): tab{0,0,0} {} bezparamteryczny jako 3 wektory wyzerowac
+
+seter/geter: 
+
+Wektor & operator[](int ind)
+
+const Wektor & operator[](int ind)const
+}
+
+M-macierz
+
+M[1]-wektor
+M[1][1]-double
+
+class ukladrownan{
+private:
+Wektor W;
+Macierz M;
+public:
+rozwiaz();
+
+}
+
+na przyszly tydzienb pelna implementacj aklasy wektor i macierz bez funkcji matematycznych (konstruktory i getery i setery)
+
+
+class ukladrownan{
+private:
+
+Macierz M;
+Wektor W;
+
+public:
+
+const Wektor Oblicz()const;
+double blad(); //moze byc w main
+
+get A i get B zwracaja const ref do macierzy i wektora;
+
+set A i set B zwracaja ref do macierzy i wektora;
+
+konstruktory!!!!! stworzyc
+
+
+}
+
+>>,<<
+
+porownania robic porownujac do epsilona(mega malej liczby)!!
+
+Ax=b
+
+x*=A^-1 B
+
+Ax*!=B 
+
+Macierze, które maja wyznacznik bliski zera maja duzy blad numeryczny.
+Maja liczyc dobrze przypadek, gdzie blad jest duzy i gdzie jest maly.
+
+|Ax*-B|
+
+URL jak rozwiazywac?
+Cramera wymaga wyznacznika. Wyznacznik - > Gausssem najlepiej liczyc!
+
+Gauss - zamiana wiersza potrzebna, gdy na poczatku jest 0. wybrac jedna!
+
+Macierz musi byc czytana transponowana , a pozniej mozna ja transponowac.
+
+
+list inicjalizujaca:
+
+Wektor(double x, double y, double z) : tab({a,b,c}) {};
+
+Wektor(std::initializer list <double> t) : tab{t} {} - bedzie git pozniej bo dluga lista
+Wektor W(1,2,3)
+
+
+int main(){
+
+const Wektor W1(0,0,1);
+const Wektor W3(2,0,1);
+
+const doubel A=3;
+
+std::cout<<W1+W3<<std::endl;
+std::cout<<W1-W3<<std::endl;
+std::cout<<W1*W3<<std::endl;
+
+std::cout<<W1*A<<std::endl;
+
+std::cout<<(W1-W3)dlugosc());<<std::endl;
+
+}
+
+
+
+UKLAD ROWNAN W SZABLONACH
+
+Teraz macierz dowolna
+
+Liczby zespolone lub rzeczywiste
+
+
+
+template<class Type,int ROZMIAR>                        Wektor W<double,3> W3d;
+
+class Wektor{
+ 
+std:array<Type,ROZMIAR> tab;
+
+
+}
+
+
+
+template<class Type, int ROZMIAR>
+
+Wektor<Type,ROZMIAR> Wektor<Type,ROZMIAR>::operator +(const Wektor<Type,ROZMIAR &W2)const{
+
+  for...
+
+  W[i]=this->tab[i]+W2[i];
+  
+  return W;
+}
+dzieki temu nie doda roznych wektorow! 
+
+specjalizacja metody!(dla chetnych)
+
+
+Na tydzien 1 trzeba poprzerabiac na template'y1
+PLIKI CPP PUSCIUTKIE
+
+
+za tydzien testy Wektor 2,3,5
+double, LZesp dodawanie wektorow mnozenie itp.
+
+testy:
+1. double, 5
+2. LZesp,5

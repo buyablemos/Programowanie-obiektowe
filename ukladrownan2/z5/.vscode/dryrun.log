@@ -1,0 +1,9 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/dawido/programowanie-obiektowe/ukladrownan2/z4-zalazek'
+mkdir -p /tmp/bk/test_swektora/obj
+g++ -c -c -g -std=c++11 -iquote inc -Wall -pedantic -o /tmp/bk/test_swektora/obj/main.o src/main.cpp
+g++ -c -c -g -std=c++11 -iquote inc -Wall -pedantic -o /tmp/bk/test_swektora/obj/LZespolona.o src/LZespolona.cpp
+g++ -o /tmp/bk/test_swektora/test_wektora /tmp/bk/test_swektora/obj/main.o /tmp/bk/test_swektora/obj/LZespolona.o
+/tmp/bk/test_swektora/test_wektora
+make: Leaving directory '/home/dawido/programowanie-obiektowe/ukladrownan2/z4-zalazek'
+ 

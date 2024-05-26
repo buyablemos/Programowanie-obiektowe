@@ -1,0 +1,8 @@
+#ifndef ROZMIAR_HH
+#define ROZMIAR_HH
+
+#define ROZMIAR  3
+
+#define DOKLZMIENNOPRZECINKOWA 0.00000000000000001
+
+#endif

@@ -1,0 +1,9 @@
+#ifndef ROZMIAR_HH
+#define ROZMIAR_HH
+
+#define ROZMIAR  5
+#define PRECYZJA 2
+
+#define DOKLZMIENNOPRZECINKOWA 0.000000001
+
+#endif

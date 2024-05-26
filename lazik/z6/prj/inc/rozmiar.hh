@@ -1,0 +1,18 @@
+#ifndef ROZMIAR_HH
+#define ROZMIAR_HH
+
+#define ROZMIAR3D  3
+
+#define PRECYZJA 2
+
+#define DOKLZMIENNOPRZECINKOWA 0.000000001
+
+#define CZESTOTLIWOSCODSWIEZANIA 200
+
+#define VKATOWA 20
+
+#define DLUGOSC 3
+#define SZEROKOSC 3
+#define WYSOKOSC 1
+
+#endif
